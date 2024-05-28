@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+   <ImageView
+       android:id="@+id/dogimg"
+       android:layout_width="200dp"
+       android:layout_height="200dp"
+       android:src="@drawable/dog"
+      android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dogvoicetranslator"
+        android:layout_centerHorizontal="true"
+       android:layout_below="@+id/dogimg"/>
+
+    <ImageView
+
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/dogwalking"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/title"/>
+
+
+
+</RelativeLayout>

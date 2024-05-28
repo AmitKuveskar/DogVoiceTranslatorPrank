@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onBoarding.screens.ThirdScreen">
+
+    <ImageView
+        android:layout_width="340dp"
+        android:layout_height="360dp"
+        android:background="@drawable/elipse3"
+        android:layout_alignParentBottom="true" />
+
+    <ImageView
+        android:id="@+id/dog"
+        android:layout_width="290dp"
+        android:layout_height="500dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/group3"
+        android:layout_marginTop="20dp"/>
+
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:background="@drawable/group570"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/dog" />
+
+
+
+    <ImageView
+        android:id="@+id/nextbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/group30"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/title" />
+
+</RelativeLayout>

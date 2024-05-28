@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onBoarding.screens.SecondScreen">
+
+
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="100dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/ellipse2"/>
+
+    <ImageView
+        android:id="@+id/dog"
+        android:layout_width="290dp"
+        android:layout_height="500dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/group200"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:background="@drawable/group2"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/dog" />
+
+    <ImageView
+        android:id="@+id/nextbtn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/paw"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/title" />
+</RelativeLayout>

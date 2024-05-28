@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onBoarding.screens.FourthScreen">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_margin="20dp"
+        android:text="Terms of Use " />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/terms"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:background="@drawable/terms"
+        android:layout_margin="15dp"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/title"/>
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/acceptbtn"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/acceptbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/terms" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dogdbottom"
+        android:layout_margin="15dp"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/acceptbtn"/>
+
+</RelativeLayout>

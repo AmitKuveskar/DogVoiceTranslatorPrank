@@ -1,7 +1,5 @@
 package com.example.dogvoicetranslatorprank.onBoarding.screens
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
-import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatImageButton
+import androidx.navigation.fragment.findNavController
 import com.example.dogvoicetranslatorprank.R
 import java.util.Locale
 
@@ -22,6 +21,7 @@ class FifthScreen : Fragment() {
     private lateinit var radioButtonPortuguese: RadioButton
     private lateinit var radioButtonKorean: RadioButton
     private lateinit var radioButtonRussian: RadioButton
+    private lateinit var Continuebtn: AppCompatImageButton
     private var lastCheckedRadioButton: RadioButton? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,8 +29,6 @@ class FifthScreen : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_fifth_screen, container, false)
-
-
         radioButtonEnglish = view.findViewById(R.id.radio_button_english)
         radioButtonHindi = view.findViewById(R.id.radio_button_hindi)
         radioButtonSpanish = view.findViewById(R.id.radio_button_spanish)
@@ -38,53 +36,22 @@ class FifthScreen : Fragment() {
         radioButtonPortuguese = view.findViewById(R.id.radio_button_portugese)
         radioButtonKorean = view.findViewById(R.id.radio_button_korean)
         radioButtonRussian = view.findViewById(R.id.radio_button_russian)
-//
-//        radioButtonEnglish.setOnClickListener { setLocale("en") }
-//        radioButtonHindi.setOnClickListener { setLocale("hi") }
-//        radioButtonSpanish.setOnClickListener { setLocale("es") }
-//        radioButtonFrench.setOnClickListener { setLocale("fr") }
-//        radioButtonPortuguese.setOnClickListener { setLocale("pt") }
-//        radioButtonKorean.setOnClickListener { setLocale("ko") }
-//        radioButtonRussian.setOnClickListener { setLocale("ru") }
+        Continuebtn = view.findViewById(R.id.continuebtn)
+
+
+
+
+        Continuebtn.setOnClickListener {
+            findNavController().navigate(R.id.action_viewPagerFragment_to_homeFragment)
+        }
+
+
         setRadioButtonListeners()
+
 
        return view
     }
 
-//    private fun setLocale(languageCode: String) {
-//        val locale = Locale(languageCode)
-//        Locale.setDefault(locale)
-//        val config = Configuration()
-//        config.setLocale(locale)
-//        requireActivity().baseContext.resources.updateConfiguration(config, requireActivity().baseContext.resources.displayMetrics)
-//
-//        // Save language preference
-//        val prefs: SharedPreferences = requireActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE)
-//        val editor = prefs.edit()
-//        editor.putString("My_Lang", languageCode)
-//        editor.apply()
-//
-//        // Show toast message
-//        Toast.makeText(requireActivity(), "Language set to ${locale.displayLanguage}", Toast.LENGTH_SHORT).show()
-//
-//        // Restart activity to apply the language change
-//        requireActivity().recreate()
-//    }
-//
-//    private fun loadLocale() {
-//        val prefs: SharedPreferences = requireActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE)
-//        val languageCode = prefs.getString("My_Lang", "")
-//        if (languageCode != null) {
-//            setLocale(languageCode)
-//        }
-//    }
-//
-//    override fun onResume() {
-//        super.onResume()
-//        loadLocale()
-//    }
-//}
-//
 
     private fun setRadioButtonListeners() {
         // Set click listener for each RadioButton
@@ -97,26 +64,21 @@ class FifthScreen : Fragment() {
         radioButtonRussian.setOnClickListener { onLanguageSelected(radioButtonRussian) }
     }
 
+
     private fun onLanguageSelected(radioButton: RadioButton) {
-        // Unselect the last checked RadioButton if it exists
+        // Uncheck the last checked RadioButton
         lastCheckedRadioButton?.isChecked = false
-
-        // Check the current RadioButton
+        // Check the newly selected RadioButton
         radioButton.isChecked = true
-
         // Update the last checked RadioButton
         lastCheckedRadioButton = radioButton
+        // Get the language code from the tag of the selected RadioButton
+        val languageCode = radioButton.tag.toString()
+        // Change the locale
+        setLocale(languageCode)
 
-        // Get the tag of the RadioButton and check if it's not null
-        val languageCode = radioButton.tag as? String
-        if (languageCode != null) {
-            // Set the locale based on the selected language code
-            setLocale(languageCode)
-        } else {
-            // Handle the case where the tag is null
-            Toast.makeText(requireActivity(), "Language code is null", Toast.LENGTH_SHORT).show()
-        }
     }
+
 
 
     private fun setLocale(languageCode: String) {
@@ -129,31 +91,9 @@ class FifthScreen : Fragment() {
             requireActivity().baseContext.resources.displayMetrics
         )
 
-        // Save language preference
-        val prefs: SharedPreferences =
-            requireActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE)
-        val editor = prefs.edit()
-        editor.putString("My_Lang", languageCode)
-        editor.apply()
-
         // Show toast message
         Toast.makeText(requireActivity(), "Language set to ${locale.displayLanguage}", Toast.LENGTH_SHORT).show()
-
-        // Restart activity to apply the language change
-        requireActivity().recreate()
     }
 
-    private fun loadLocale() {
-        val prefs: SharedPreferences =
-            requireActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE)
-        val languageCode = prefs.getString("My_Lang", "")
-        if (languageCode != null) {
-            setLocale(languageCode)
-        }
-    }
 
-    override fun onResume() {
-        super.onResume()
-
-    }
 }

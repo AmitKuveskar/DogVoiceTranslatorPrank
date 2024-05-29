@@ -7,6 +7,8 @@
     android:padding="16dp"
     tools:context=".onBoarding.screens.FifthScreen">>
 
+
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -16,6 +18,7 @@
         android:textSize="30dp"
         android:layout_margin="20dp"
         android:text="Select Language " />
+
 
 
     <LinearLayout
@@ -247,6 +250,25 @@
             android:layout_height="wrap_content"
             android:tag="ru"/>
     </LinearLayout>
+
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/continuebtn"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/continuesbtn"
+       android:layout_gravity="center_horizontal"
+        android:layout_below="@id/terms" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dogradio"
+        android:layout_below="@+id/acceptbtn"/>
 
 </LinearLayout>
 

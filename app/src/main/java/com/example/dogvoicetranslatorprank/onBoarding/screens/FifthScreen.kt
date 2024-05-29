@@ -1,5 +1,6 @@
 package com.example.dogvoicetranslatorprank.onBoarding.screens
 
+import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.navigation.fragment.findNavController
+import com.example.dogvoicetranslatorprank.AppPreference
 import com.example.dogvoicetranslatorprank.R
 import java.util.Locale
 
@@ -22,6 +24,7 @@ class FifthScreen : Fragment() {
     private lateinit var radioButtonKorean: RadioButton
     private lateinit var radioButtonRussian: RadioButton
     private lateinit var Continuebtn: AppCompatImageButton
+    lateinit var  appPreference: AppPreference
     private var lastCheckedRadioButton: RadioButton? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +48,7 @@ class FifthScreen : Fragment() {
             val selectedRadioButton = lastCheckedRadioButton
             if (selectedRadioButton != null) {
                 findNavController().navigate(R.id.action_viewPagerFragment_to_homeFragment)
+                onBoardingfinished()
             } else {
                 Toast.makeText(requireContext(), "Please select a language", Toast.LENGTH_SHORT).show()
             }
@@ -101,5 +105,10 @@ class FifthScreen : Fragment() {
         Toast.makeText(requireActivity(), "Language set to ${locale.displayLanguage}", Toast.LENGTH_SHORT).show()
     }
 
-
+            private  fun onBoardingfinished(){
+                val sharedPreferences = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putBoolean("Finished", true)
+                editor.apply()
+            }
 }

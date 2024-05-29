@@ -1,5 +1,6 @@
 package com.example.dogvoicetranslatorprank
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,6 +27,9 @@ class SplashFragment : Fragment() {
     ): View? {
 
         android.os.Handler().postDelayed({
+            if(onBoardingfinished()){
+                findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+            }else
             findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
         }, 3000)
 
@@ -48,4 +52,8 @@ class SplashFragment : Fragment() {
         return view
     }
 
+    private  fun onBoardingfinished(): Boolean{
+        val sharedPreferences = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+       return  sharedPreferences.getBoolean("Finished",false)
+    }
 }

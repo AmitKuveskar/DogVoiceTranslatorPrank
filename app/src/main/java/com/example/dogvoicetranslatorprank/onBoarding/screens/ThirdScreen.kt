@@ -10,17 +10,17 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.dogvoicetranslatorprank.R
 
 class ThirdScreen : Fragment() {
-    lateinit var  nextbtn2 : ImageView
+    lateinit var  nextbtn3 : ImageView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_third_screen, container, false)
-        nextbtn2 = view.findViewById(R.id.nextbtn)
+        nextbtn3 = view.findViewById(R.id.nextbtn)
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
 
-        nextbtn2.setOnClickListener {
+        nextbtn3.setOnClickListener {
             viewPager?.currentItem = 3
         }
         return  view

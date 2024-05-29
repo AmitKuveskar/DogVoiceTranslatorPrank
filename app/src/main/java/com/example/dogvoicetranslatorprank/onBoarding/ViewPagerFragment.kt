@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.example.dogvoicetranslatorprank.R
+import com.example.dogvoicetranslatorprank.onBoarding.screens.FifthScreen
 import com.example.dogvoicetranslatorprank.onBoarding.screens.FirstScreen
 import com.example.dogvoicetranslatorprank.onBoarding.screens.FourthScreen
 import com.example.dogvoicetranslatorprank.onBoarding.screens.SecondScreen
@@ -27,7 +28,8 @@ class ViewPagerFragment : Fragment() {
             FirstScreen(),
             SecondScreen(),
             ThirdScreen(),
-            FourthScreen()
+            FourthScreen(),
+            FifthScreen()
         )
 
         val adapter = ViewPagerAdapter(

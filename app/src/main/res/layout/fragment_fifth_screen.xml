@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".onBoarding.screens.FifthScreen">>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_margin="20dp"
+        android:text="Select Language " />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <!-- Image for the language -->
+        <ImageView
+            android:id="@+id/language_image_english"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/unitedstates" />
+
+        <!-- Name of the language -->
+        <TextView
+            android:id="@+id/language_name_english"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="English"
+            android:textSize="16sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <!-- RadioButton for selection -->
+        <RadioButton
+            android:id="@+id/radio_button_english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="en"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/language_image_hindi"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/india" />
+
+        <TextView
+            android:id="@+id/language_name_hindi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hindi"
+            android:textSize="16sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <RadioButton
+            android:id="@+id/radio_button_hindi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="hi"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <!-- Image for the language -->
+        <ImageView
+            android:id="@+id/language_image_spanish"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/spanish" />
+
+        <!-- Name of the language -->
+        <TextView
+            android:id="@+id/language_name_spanish"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Spanish"
+            android:textSize="16sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <!-- RadioButton for selection -->
+        <RadioButton
+            android:id="@+id/radio_button_spanish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="es"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <!-- Image for the language -->
+        <ImageView
+            android:id="@+id/language_image_french"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/french" />
+
+        <!-- Name of the language -->
+        <TextView
+            android:id="@+id/language_name_french"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="French"
+            android:textSize="16sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <!-- RadioButton for selection -->
+        <RadioButton
+            android:id="@+id/radio_button_french"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="fr"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <!-- Image for the language -->
+        <ImageView
+            android:id="@+id/language_image_portugese"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/portugese" />
+
+        <!-- Name of the language -->
+        <TextView
+            android:id="@+id/language_name_portugese"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Portugese"
+            android:textSize="16sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <!-- RadioButton for selection -->
+        <RadioButton
+            android:id="@+id/radio_button_portugese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="pt"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <!-- Image for the language -->
+        <ImageView
+            android:id="@+id/language_image_korean"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/korean" />
+
+        <!-- Name of the language -->
+        <TextView
+            android:id="@+id/language_name_korean"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Korean"
+            android:textSize="16sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <!-- RadioButton for selection -->
+        <RadioButton
+            android:id="@+id/radio_button_korean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="ko"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <!-- Image for the language -->
+        <ImageView
+            android:id="@+id/language_image_russian"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/russian" />
+
+        <!-- Name of the language -->
+        <TextView
+            android:id="@+id/language_name_russian"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Russian"
+            android:textSize="16sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <!-- RadioButton for selection -->
+        <RadioButton
+            android:id="@+id/radio_button_russian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="ru"/>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+

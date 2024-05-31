@@ -2,8 +2,18 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.DogVoiceTranslatorPrank" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
     <style name="Theme.DogVoiceTranslatorPrank" parent="Base.Theme.DogVoiceTranslatorPrank" />
+    <style name="CustomMenuTextAppearance" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">18sp</item>
+        <!-- You can customize other text properties like color, style, etc. -->
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/white</item>
+    </style>
 </resources>

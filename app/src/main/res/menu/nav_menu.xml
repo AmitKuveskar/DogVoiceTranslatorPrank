@@ -7,7 +7,8 @@
         <item
             android:id="@+id/dogsound"
             android:title="Dog Sounds"
-            android:icon="@drawable/bark"/>
+            android:icon="@drawable/bark"
+            android:iconTint="@color/white"/>
 
         <item
             android:id="@+id/dogvoicetranslator"
@@ -15,13 +16,13 @@
             android:icon="@drawable/translateicon"/>
 
         <item
-            android:id="@+id/Training"
+            android:id="@+id/training"
             android:title="Training"
             android:icon="@drawable/bone"/>
 
         <item
             android:id="@+id/fakecall"
-            android:title="FaKe Call"
+            android:title="Fake Call"
             android:icon="@drawable/baseline_videocam_24"/>
 
         <item

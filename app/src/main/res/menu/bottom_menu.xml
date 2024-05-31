@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dogsound"
+        android:title="Dog Sound"
+        android:icon="@drawable/bark"/>
+
+    <item
+        android:id="@+id/dogtraining"
+        android:title="Translator"
+        android:icon="@drawable/translateicon"/>
+
+    <item
+        android:id="@+id/training"
+        android:title="Traning"
+        android:icon="@drawable/bone"/>
+
+    <item
+        android:id="@+id/fakecall"
+        android:title="Dog Call"
+        android:icon="@drawable/baseline_videocam_24"/>
+
+    <item
+        android:id="@+id/whistle"
+        android:title="Whistle"
+        android:icon="@drawable/whistle"/>
+
+
+</menu>

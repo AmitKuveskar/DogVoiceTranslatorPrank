@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:padding="20dp"
+    android:gravity="bottom"
+    android:background="#F9A825">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="0dp"
+        android:backgroundTint="#D1D1D1">
+
+        <ImageView
+            android:id="@+id/userimg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/dog"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/dash3"
+        android:text="Dog Voice Translator Prank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:textSize="20sp"/>
+
+
+
+
+
+</LinearLayout>

@@ -47,7 +47,7 @@ class FifthScreen : Fragment() {
         Continuebtn.setOnClickListener {
             val selectedRadioButton = lastCheckedRadioButton
             if (selectedRadioButton != null) {
-                findNavController().navigate(R.id.action_viewPagerFragment_to_homeFragment)
+                findNavController().navigate(R.id.action_viewPagerFragment_to_dashboardActivity)
                 onBoardingfinished()
             } else {
                 Toast.makeText(requireContext(), "Please select a language", Toast.LENGTH_SHORT).show()

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:showIn = "navigation_view">
+
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/dogsound"
+            android:title="Dog Sounds"
+            android:icon="@drawable/bark"/>
+
+        <item
+            android:id="@+id/dogvoicetranslator"
+            android:title="Dog Voice Translator"
+            android:icon="@drawable/translateicon"/>
+
+        <item
+            android:id="@+id/Training"
+            android:title="Training"
+            android:icon="@drawable/bone"/>
+
+        <item
+            android:id="@+id/fakecall"
+            android:title="FaKe Call"
+            android:icon="@drawable/baseline_videocam_24"/>
+
+        <item
+            android:id="@+id/whistle"
+            android:title="Whistle"
+            android:icon="@drawable/whistle"/>
+
+    </group>
+
+    <item
+        android:title="More">
+        <menu>
+            <item
+                android:id="@+id/privacypolicy"
+                android:title="Privacy Policy"
+                android:icon="@drawable/privacy"/>
+
+            <item
+                android:id="@+id/termsandconditions"
+                android:title="Terms and Conditions"
+                android:icon="@drawable/termsandconditions"/>
+        </menu>
+    </item>
+
+</menu>
+

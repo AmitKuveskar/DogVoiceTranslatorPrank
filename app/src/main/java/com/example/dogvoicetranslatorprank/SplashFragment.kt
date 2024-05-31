@@ -28,7 +28,7 @@ class SplashFragment : Fragment() {
 
         android.os.Handler().postDelayed({
             if(onBoardingfinished()){
-                findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+                findNavController().navigate(R.id.action_splashFragment_to_dashboardActivity)
             }else
             findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
         }, 3000)

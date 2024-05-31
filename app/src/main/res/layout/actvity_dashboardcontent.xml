@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/ButtonDrawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/menu"
+            android:background="@android:color/transparent"
+            android:padding="5dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dog Voice Translator Prank"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginStart="30dp"
+            android:gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ImageView
+        android:id="@+id/dogtraining"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/dogstraining"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/toolbar"/>"
+
+    <LinearLayout
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/dogtraining"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <ImageView
+            android:id="@+id/sounds"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sounds"
+            android:layout_weight="1"
+            android:layout_marginEnd="7dp" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/translate"
+            android:layout_weight="1"
+            android:layout_marginStart="7dp" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/threedogs"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/threedogs"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/image"/>"
+
+
+    <LinearLayout
+        android:id="@+id/fakecall"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/threedogs"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <ImageView
+            android:id="@+id/whisle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fakecall"
+            android:layout_weight="1"
+            android:layout_marginEnd="7dp" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/whisle"
+            android:layout_weight="1"
+            android:layout_marginStart="7dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

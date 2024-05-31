@@ -14,9 +14,9 @@
     android:id="@+id/frame_container"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/Bottom_Nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Bottom_Nav"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_menu"
         android:background="#FF8F00"

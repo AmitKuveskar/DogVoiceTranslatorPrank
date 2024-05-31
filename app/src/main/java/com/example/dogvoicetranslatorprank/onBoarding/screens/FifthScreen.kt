@@ -43,7 +43,6 @@ class FifthScreen : Fragment() {
 
 
 
-
         Continuebtn.setOnClickListener {
             val selectedRadioButton = lastCheckedRadioButton
             if (selectedRadioButton != null) {

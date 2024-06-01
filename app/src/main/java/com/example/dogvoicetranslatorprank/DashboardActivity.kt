@@ -32,13 +32,15 @@ class DashboardActivity : AppCompatActivity() {
         Soundsbtn = findViewById(R.id.sounds)
 
         Soundsbtn.setOnClickListener {
-           val intent = Intent(this,BottomNavigationActivity::class.java)
+           val intent = Intent(this@DashboardActivity,BottomNavigationActivity::class.java)
             startActivity(intent)
         }
 
         ButtonDrawer.setOnClickListener {
             drawerLayout.open()
         }
+
+
 
         navigationView.setNavigationItemSelectedListener { item ->
             when (item.itemId) {

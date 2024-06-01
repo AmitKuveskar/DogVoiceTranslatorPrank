@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".APICalling.Sounds.SoundActivity">
+
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/back"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/orangeRectangle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_rectangle"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/timerIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/stopwatch"
+        android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Timer"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginEnd="8dp" />
+
+        <Spinner
+            android:id="@+id/dropdownSpinner"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/downarrow"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/midpic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/infinity"/>
+
+
+    <FrameLayout
+        android:id="@+id/middledog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="16dp">
+
+        <!-- First ImageView for the first background -->
+        <ImageView
+            android:id="@+id/backgroundImage1"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_gravity="center"
+            android:src="@drawable/dog2bg2" />
+
+        <!-- Second ImageView for the second background -->
+        <ImageView
+            android:id="@+id/backgroundImage2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/dog2bg1" />
+
+        <!-- Third ImageView for the main image -->
+        <ImageView
+            android:id="@+id/mainImage"
+            android:layout_width="140dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center"
+            android:src="@drawable/dog2" />
+    </FrameLayout>
+
+<TextView
+    android:id="@+id/title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/middledog"
+    android:text="Dog"
+    android:gravity="center_horizontal"
+    android:textStyle="bold"/>
+
+
+
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/title"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:progress="40"
+            android:thumbTint="@color/orange"
+            android:progressTint="@color/orange"
+            android:progressDrawable="@drawable/bg_custom_seekbar" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/playbtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+           android:layout_below="@id/title"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/seekbar"
+            android:background="@drawable/play" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/headphonedog"
+        android:layout_margin="20dp"
+        android:layout_below="@id/playbtn"/>
+
+
+
+
+
+
+</RelativeLayout>

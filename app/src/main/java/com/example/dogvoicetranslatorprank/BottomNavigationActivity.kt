@@ -23,6 +23,7 @@ class BottomNavigationActivity : AppCompatActivity() {
 
         Bottom_Nav = findViewById(R.id.Bottom_Nav)
         Bottom_Nav.itemIconTintList = null
+
         Bottom_Nav.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.dogsound ->{

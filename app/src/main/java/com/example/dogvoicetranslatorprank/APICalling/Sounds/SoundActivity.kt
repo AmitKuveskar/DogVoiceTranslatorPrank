@@ -1,16 +1,20 @@
 package com.example.dogvoicetranslatorprank.APICalling.Sounds
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.dogvoicetranslatorprank.BottomNavigationActivity
 import com.example.dogvoicetranslatorprank.R
 
 class SoundActivity : AppCompatActivity() {
 
+    lateinit var backbtn: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +27,11 @@ class SoundActivity : AppCompatActivity() {
         }
 
         val dropdownSpinner: Spinner = findViewById(R.id.dropdownSpinner)
+        backbtn = findViewById(R.id.backbtn)
+        backbtn.setOnClickListener {
+            val intent = Intent(this@SoundActivity, BottomNavigationActivity::class.java)
+            startActivity(intent)
+        }
 
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(

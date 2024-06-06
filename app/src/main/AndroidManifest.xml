@@ -18,7 +18,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".VideoCallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".APICalling.Sounds.SoundActivity"
             android:exported="false" />
         <activity
             android:name=".BottomNavigationActivity"
@@ -27,7 +30,7 @@
             android:name=".DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".APICalling.Sounds.SoundActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -27,8 +27,8 @@ class DogSoundsFragment : Fragment() {
 
     lateinit var Homebtn: ImageView
     lateinit var recyclerView: RecyclerView
-    lateinit var  SearchButton : AppCompatImageButton
-    lateinit var  searchEditText : TextView
+    lateinit var SearchButton: AppCompatImageButton
+    lateinit var searchEditText: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,33 +54,33 @@ class DogSoundsFragment : Fragment() {
 
     private fun getData() {
         RetroFitInstance.apiInterface.Sounds().enqueue(object : Callback<SoundsPojo?> {
-            override fun onResponse(p0: Call<SoundsPojo?>, p1: Response<SoundsPojo?>) {
-                if (p1.code() == 200 && p1.body() != null) {
+            override fun onResponse(call: Call<SoundsPojo?>, response: Response<SoundsPojo?>) {
+                if (isAdded) { // Check if fragment is still attached
+                    if (response.isSuccessful && response.body() != null) {
+                        val gridLayoutManager = GridLayoutManager(requireActivity(), 2)
+                        recyclerView.layoutManager = gridLayoutManager
 
+                        val soundAdapter = SoundAdapter(requireContext(), response.body()!!)
+                        recyclerView.adapter = soundAdapter
 
-                    val gridLayoutManager = GridLayoutManager(requireContext(),2)
-                    recyclerView.layoutManager = gridLayoutManager
+                        SearchButton.setOnClickListener {
+                            val query = searchEditText.text.toString().trim()
+                            soundAdapter.performSearch(query)
+                        }
 
-                    val SoundAdapter = SoundAdapter(requireContext(), p1.body()!!)
-                    recyclerView.adapter = SoundAdapter
-
-                    SearchButton.setOnClickListener {
-                        val query = searchEditText.text.toString().trim()
-                        SoundAdapter.performSearch(query)
+                        Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
                     }
-
-                    Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
-
-                } else {
-                    Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()
-
                 }
             }
 
-            override fun onFailure(p0: Call<SoundsPojo?>, p1: Throwable) {
-                Toast.makeText(requireContext(), ""+p1.message, Toast.LENGTH_SHORT).show()
+            override fun onFailure(call: Call<SoundsPojo?>, t: Throwable) {
+                if (isAdded) { // Check if fragment is still attached
+                    Toast.makeText(requireContext(), "Error: " + t.message, Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
         })
-
     }
 }

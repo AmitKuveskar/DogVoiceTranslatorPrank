@@ -1,14 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.VoiceTranslatorFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/home"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Dog Voice Translator"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/cutedogandmen"
+        android:layout_margin="20dp"
+        android:scaleType="centerCrop"/>
+
+
+    <ImageView
+    android:layout_width="100dp"
+    android:layout_height="80dp"
+    android:background="@drawable/translateicon2"
+    android:layout_gravity="center" />
+
+    </FrameLayout>
+
+<TextView
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_below="@+id/head"
+    android:hint="Tap On the mic to record your voice"
+    android:gravity="center"
+    android:textSize="16sp"
+    android:background="@drawable/bgrectangle"
+    android:layout_margin="20dp"/>
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/text"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/mic"/>
+
+
+</RelativeLayout>

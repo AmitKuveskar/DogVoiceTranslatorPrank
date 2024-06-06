@@ -24,7 +24,7 @@
     <item
         android:id="@+id/whistle"
         android:title="Whistle"
-        android:icon="@drawable/whistle"/>
+        android:icon="@drawable/whistle2"/>
 
 
 </menu>

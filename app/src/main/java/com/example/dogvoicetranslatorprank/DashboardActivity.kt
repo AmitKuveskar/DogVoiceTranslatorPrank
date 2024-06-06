@@ -3,6 +3,7 @@ package com.example.dogvoicetranslatorprank
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,6 +17,10 @@ class DashboardActivity : AppCompatActivity() {
     lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
     lateinit var  Soundsbtn: androidx.appcompat.widget.AppCompatImageButton
+    lateinit var  Trainingbtn: ImageView
+    lateinit var  Translatebtn: ImageView
+    lateinit var  FakeCallbtn: ImageView
+    lateinit var  Whistlebtn: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +36,45 @@ class DashboardActivity : AppCompatActivity() {
         navigationView = findViewById(R.id.navigationview)
         navigationView.itemIconTintList = null
         Soundsbtn = findViewById(R.id.sounds)
+        Trainingbtn = findViewById(R.id.dogtraining)
+        Translatebtn = findViewById(R.id.translatebtn)
+        FakeCallbtn = findViewById(R.id.fakecallbtn)
+        Whistlebtn = findViewById(R.id.whistlebtn)
+
+        Trainingbtn.setOnClickListener {
+            // Create an intent to navigate to BottomNavigationActivity
+            val intent = Intent(this@DashboardActivity, BottomNavigationActivity::class.java)
+            // Add an extra to specify the WhistleFragment target
+            intent.putExtra("TARGET_FRAGMENT", "TrainingFragment")
+            startActivity(intent)
+        }
 
         Soundsbtn.setOnClickListener {
            val intent = Intent(this@DashboardActivity,BottomNavigationActivity::class.java)
+            intent.putExtra("TARGET_FRAGMENT", "DogSoundsFragment")
             startActivity(intent)
         }
+
+        Translatebtn.setOnClickListener {
+            val intent = Intent(this@DashboardActivity,BottomNavigationActivity::class.java)
+            intent.putExtra("TARGET_FRAGMENT", "VoiceTranslatorFragment")
+            startActivity(intent)
+        }
+
+        FakeCallbtn.setOnClickListener {
+            val intent = Intent(this@DashboardActivity,BottomNavigationActivity::class.java)
+            intent.putExtra("TARGET_FRAGMENT", "FakeCallFragment")
+            startActivity(intent)
+        }
+
+        Whistlebtn.setOnClickListener {
+            val intent = Intent(this@DashboardActivity,BottomNavigationActivity::class.java)
+            intent.putExtra("TARGET_FRAGMENT", "WhistleFragment")
+            startActivity(intent)
+        }
+
+
+
 
         ButtonDrawer.setOnClickListener {
             drawerLayout.open()
@@ -47,23 +86,32 @@ class DashboardActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.dogsound -> {
                     val intent = Intent(this@DashboardActivity, BottomNavigationActivity::class.java)
+                    intent.putExtra("TARGET_FRAGMENT", "DogSoundFragment")
                     startActivity(intent)
                     true
                 }
                 R.id.dogvoicetranslator -> {
-
+                    val intent = Intent(this@DashboardActivity, BottomNavigationActivity::class.java)
+                    intent.putExtra("TARGET_FRAGMENT", "VoiceTranslatorFragment")
+                    startActivity(intent)
                     true
                 }
                 R.id.training -> {
-                    // Handle Training item click
+                    val intent = Intent(this@DashboardActivity, BottomNavigationActivity::class.java)
+                    intent.putExtra("TARGET_FRAGMENT", "TrainingFragment")
+                    startActivity(intent)
                     true
                 }
                 R.id.fakecall -> {
-                    // Handle Fake Call item click
+                    val intent = Intent(this@DashboardActivity, BottomNavigationActivity::class.java)
+                    intent.putExtra("TARGET_FRAGMENT", "FakeCallFragment")
+                    startActivity(intent)
                     true
                 }
                 R.id.whistle -> {
-                    // Handle Whistle item click
+                    val intent = Intent(this@DashboardActivity, BottomNavigationActivity::class.java)
+                    intent.putExtra("TARGET_FRAGMENT", "WhistleFragment")
+                    startActivity(intent)
                     true
                 }
                 R.id.privacypolicy -> {

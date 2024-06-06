@@ -59,6 +59,7 @@
             android:layout_marginEnd="7dp" />
 
         <ImageView
+            android:id="@+id/translatebtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/translate"
@@ -78,7 +79,7 @@
 
 
     <LinearLayout
-        android:id="@+id/fakecall"
+        android:id="@+id/image2"
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:orientation="horizontal"
@@ -87,7 +88,7 @@
         android:layout_marginEnd="20dp">
 
         <ImageView
-            android:id="@+id/whisle"
+            android:id="@+id/fakecallbtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/fakecall"
@@ -95,6 +96,7 @@
             android:layout_marginEnd="7dp" />
 
         <ImageView
+            android:id="@+id/whistlebtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/whisle"

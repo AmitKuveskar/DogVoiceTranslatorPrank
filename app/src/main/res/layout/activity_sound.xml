@@ -97,10 +97,10 @@
             android:src="@drawable/dog2bg1" />
 
         <!-- Third ImageView for the main image -->
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/mainImage"
             android:layout_width="140dp"
-            android:layout_height="240dp"
+            android:layout_height="140dp"
             android:layout_gravity="center"
             android:src="@drawable/dog2" />
     </FrameLayout>
@@ -129,15 +129,15 @@
             android:progressTint="@color/orange"
             android:progressDrawable="@drawable/bg_custom_seekbar" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/playbtn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-           android:layout_below="@id/title"
-            android:layout_marginTop="27dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@id/seekbar"
-            android:background="@drawable/play" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/playbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/title"
+        android:layout_marginTop="27dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/seekbar"
+         android:src="@drawable/play"/>
 
     <ImageView
         android:layout_width="match_parent"

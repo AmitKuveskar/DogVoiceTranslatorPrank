@@ -1,6 +1,7 @@
 package com.example.dogvoicetranslatorprank.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.dogvoicetranslatorprank.APICalling.Sounds.SoundActivity
 import com.example.dogvoicetranslatorprank.APICalling.Sounds.SoundsPojo
 import com.example.dogvoicetranslatorprank.APICalling.Sounds.SoundsPojoItem
 import com.example.dogvoicetranslatorprank.R
@@ -33,7 +35,14 @@ class SoundAdapter(private val context: Context, private val SoundsPojo: SoundsP
         Glide.with(holder.itemView)
             .load(sound.post_image) // Load image from URL
             .into(holder.Image) // Set image into ImageView
-
+        holder.Image.setOnClickListener {
+            // Create an intent to start the next activity
+            val intent = Intent(context, SoundActivity::class.java)
+            // Pass the audio information to the next activity using intent extras
+            intent.putExtra("audio_url", sound.post_audio)
+            intent.putExtra("post_image", sound.post_image)
+            context.startActivity(intent) // Start the next activity
+        }
 
     }
 

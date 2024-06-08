@@ -26,7 +26,7 @@
         android:id="@+id/dogwalk"
         android:layout_width="100dp"
         android:layout_height="100dp"
-       lottie:lottie_rawRes="@raw/dogwalk"
+        lottie:lottie_rawRes="@raw/dogwalk"
         autoPlay="true"
         lottie:lottie_loop="true"
         android:layout_centerHorizontal="true"

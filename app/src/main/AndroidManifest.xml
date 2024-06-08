@@ -2,11 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.any" android:required="true" />
+
 
 
     <application
@@ -21,10 +28,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".APICalling.FakeCall.FakeCallActivity"
+            android:name=".APICalling.FakeCall.IncomingCallActivity"
             android:exported="false" />
         <activity
-            android:name=".VideoCallActivity"
+            android:name=".APICalling.FakeCall.FakeVideoCallActivity"
             android:exported="false" />
         <activity
             android:name=".APICalling.Sounds.SoundActivity"

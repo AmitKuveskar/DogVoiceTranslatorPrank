@@ -6,15 +6,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".APICalling.FakeCall.IncomingCallActivity">
-
-
+    tools:context=".APICalling.FakeCall.IncomingCallActivity3">
 
     <ImageView
         android:id="@+id/contact_picture"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/husky"
+        android:src="@drawable/labrador"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"/>
 
@@ -22,7 +20,7 @@
         android:id="@+id/contact_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Husky"
+        android:text="Labrador"
         android:textSize="18sp"
         android:textColor="@android:color/black"
         android:layout_below="@id/contact_picture"
@@ -49,7 +47,7 @@
         autoPlay="true"
         lottie:lottie_loop="true"
         android:layout_marginStart="45dp"
-       android:layout_marginBottom="70dp"
+        android:layout_marginBottom="70dp"
         android:layout_alignParentBottom="true" />
 
 
@@ -65,7 +63,5 @@
         android:layout_marginBottom="80dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true" />
-
-
 
 </RelativeLayout>

@@ -3,6 +3,7 @@ package com.example.dogvoicetranslatorprank.onBoarding.screens
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -66,6 +67,7 @@ class FifthScreen : Fragment() {
         // Set click listener for each RadioButton
         radioButtonEnglish.setOnClickListener { onLanguageSelected(radioButtonEnglish) }
         radioButtonHindi.setOnClickListener { onLanguageSelected(radioButtonHindi) }
+        Log.d("LanguageChange", "Language selected: ${radioButtonHindi.text}")
         radioButtonSpanish.setOnClickListener { onLanguageSelected(radioButtonSpanish) }
         radioButtonFrench.setOnClickListener { onLanguageSelected(radioButtonFrench) }
         radioButtonPortuguese.setOnClickListener { onLanguageSelected(radioButtonPortuguese) }
@@ -99,7 +101,6 @@ class FifthScreen : Fragment() {
             config,
             requireActivity().baseContext.resources.displayMetrics
         )
-
         // Show toast message
         Toast.makeText(requireActivity(), "Language set to ${locale.displayLanguage}", Toast.LENGTH_SHORT).show()
     }

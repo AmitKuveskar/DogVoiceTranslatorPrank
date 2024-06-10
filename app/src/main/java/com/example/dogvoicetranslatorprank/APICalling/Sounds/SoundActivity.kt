@@ -23,10 +23,12 @@ class SoundActivity : AppCompatActivity() {
 
     private lateinit var backbtn: ImageView
     private lateinit var playButton: ImageView
+    private lateinit var loopButton: ImageView
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var Image: de.hdodenhof.circleimageview.CircleImageView
     private lateinit var seekBar: SeekBar
     private var isPlaying: Boolean = false
+    private var isLooping: Boolean = false
     private var audioUrl: String? = null
     private var playbackDuration: Int = 0
     private val handler = Handler()
@@ -47,6 +49,7 @@ class SoundActivity : AppCompatActivity() {
         playButton = findViewById(R.id.playbtn)
         seekBar = findViewById(R.id.seekbar)
         Image = findViewById(R.id.mainImage)
+        loopButton = findViewById(R.id.loop)
 
         // Find the Spinner in the layout
         val dropdownSpinner: Spinner = findViewById(R.id.dropdownSpinner)
@@ -123,6 +126,12 @@ class SoundActivity : AppCompatActivity() {
             }
         }
 
+        // Set click listener for the loop button
+        loopButton.setOnClickListener {
+            isLooping = !isLooping
+            mediaPlayer.isLooping = isLooping
+            loopButton.setImageResource(if (isLooping) R.drawable.infinityselected else R.drawable.infinity)
+        }
         // Set up SeekBar
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {

@@ -96,7 +96,7 @@ class SoundActivity : AppCompatActivity() {
                 prepareAsync()
                 setOnPreparedListener {
                     seekBar.max = duration
-                    startPlaying()
+                    startAudio()
                 }
                 setOnCompletionListener { onAudioCompletion() }
             }
@@ -116,6 +116,9 @@ class SoundActivity : AppCompatActivity() {
             if (isPlaying) {
                 pauseAudio()
             } else {
+                if (mediaPlayer.currentPosition >= mediaPlayer.duration) {
+                    mediaPlayer.seekTo(0) // Reset the MediaPlayer if it has reached the end
+                }
                 startAudio()
             }
         }
@@ -138,7 +141,7 @@ class SoundActivity : AppCompatActivity() {
         })
     }
 
-    private fun startPlaying() {
+    private fun startAudio() {
         startTime = System.currentTimeMillis()
         mediaPlayer.start()
         isPlaying = true
@@ -165,20 +168,6 @@ class SoundActivity : AppCompatActivity() {
         }, 1000)
     }
 
-    private fun startAudio() {
-        startTime = System.currentTimeMillis()
-        mediaPlayer.start()
-        isPlaying = true
-        playButton.setImageResource(R.drawable.pause)
-
-        if (playbackDuration > 0) {
-            durationRunnable = Runnable {
-                pauseAudio()
-            }
-            handler.postDelayed(durationRunnable!!, playbackDuration.toLong())
-        }
-    }
-
     private fun applyPlaybackDuration() {
         handler.removeCallbacksAndMessages(null) // Clear existing callbacks
         if (isPlaying) {
@@ -197,6 +186,7 @@ class SoundActivity : AppCompatActivity() {
             mediaPlayer.pause()
             isPlaying = false
             playButton.setImageResource(R.drawable.play)
+            handler.removeCallbacksAndMessages(null) // Stop updating seek bar
         }
     }
 
@@ -208,9 +198,11 @@ class SoundActivity : AppCompatActivity() {
     }
 
     private fun onAudioCompletion() {
-        seekBar.progress = seekBar.max
+        seekBar.progress = 0 // Reset the seek bar to the beginning
+        mediaPlayer.seekTo(0) // Reset the MediaPlayer to the beginning
         isPlaying = false
         playButton.setImageResource(R.drawable.play)
+        handler.removeCallbacksAndMessages(null) // Stop updating seek bar
     }
 
     override fun onDestroy() {

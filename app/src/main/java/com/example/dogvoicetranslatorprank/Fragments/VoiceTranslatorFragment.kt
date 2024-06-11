@@ -1,6 +1,7 @@
 package com.example.dogvoicetranslatorprank.Fragments
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.MediaRecorder
 import android.os.Bundle
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.example.dogvoicetranslatorprank.DashboardActivity
 import com.example.dogvoicetranslatorprank.R
 import java.io.IOException
 import java.util.*
@@ -21,6 +23,7 @@ import java.util.*
 class VoiceTranslatorFragment : Fragment() {
     private lateinit var micIcon: ImageView
     private lateinit var recordIcon: ImageView
+    lateinit var Homebtn: View
     private lateinit var recordingTimeTextView: TextView
     private lateinit var instructionTextView: TextView
     private var recorder: MediaRecorder? = null
@@ -43,6 +46,11 @@ class VoiceTranslatorFragment : Fragment() {
         recordIcon = view.findViewById(R.id.recordicon)
         recordingTimeTextView = view.findViewById(R.id.recordingTimeTextView)
         instructionTextView = view.findViewById(R.id.txthint)
+        Homebtn = view.findViewById(R.id.home)
+        Homebtn.setOnClickListener {
+            val intent = Intent(requireActivity(), DashboardActivity::class.java)
+            startActivity(intent)
+        }
 
         micIcon.setOnClickListener {
             if (isRecording) {
